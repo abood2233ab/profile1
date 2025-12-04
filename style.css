@@ -1,53 +1,54 @@
-* { margin:0; padding:0; box-sizing:border-box; }
-body { overflow:hidden; background:#000; font-family:'Courier New',monospace; color:#0f0; }
-#matrix { position:fixed; top:0; left:0; width:100%; height:100%; z-index:1; }
-
-.sound-control {
-    position:fixed; top:20px; right:20px; background:rgba(0,255,0,0.15);
-    color:#0f0; padding:12px 18px; border:3px solid #0f0; border-radius:10px;
-    cursor:pointer; z-index:9999; font-weight:bold; box-shadow:0 0 30px #0f0;
+body {
+  margin: 0;
+  padding: 0;
+  background: #000;
+  font-family: monospace;
+  color: #00ff9d;
+  text-align: center;
+  overflow: hidden;
 }
-.sound-control:hover { background:#0f0; color:#000; }
+
+/* تأثير إضاءة نيون */
+.glow {
+  text-shadow: 0 0 10px #00ff9d, 0 0 20px #00ff9d, 0 0 40px #00ff9d;
+}
 
 .container {
-    position:absolute; top:50%; left:50%; transform:translate(-50%,-50%);
-    text-align:center; z-index:10;
-}
-.hacker-image img {
-    width:220px; height:220px; border-radius:50%; border:7px solid #0f0;
-    box-shadow:0 0 50px #0f0, inset 0 0 40px #0f0; animation:pulse 2s infinite;
-}
-h1.glitch {
-    font-size:6.5rem; font-weight:900; letter-spacing:15px; margin:30px 0;
-    animation:glitch 3s infinite;
-}
-.name { font-size:3.8rem; margin:20px 0; text-shadow:0 0 30px #0f0; }
-.tagline { font-size:1.9rem; opacity:0.85; letter-spacing:8px; }
-
-.neon-light { 
-    position:fixed; top:0; width:100%; height:8px; background:#0f0;
-    box-shadow:0 0 40px #0f0; animation:neon 4s infinite; 
-}
-.neon-light:nth-child(2) { bottom:0; animation-delay:2s; }
-
-#scaryMessage {
-    position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.98);
-    color:#f00; display:flex; flex-direction:column; justify-content:center;
-    align-items:center; z-index:9999; opacity:0; transition:opacity 1s;
-    font-size:4rem; text-shadow:0 0 40px #f00;
-}
-#scaryMessage.show { opacity:1; }
-.terminal-text {
-    background:#000; color:#0f0; padding:25px; border:3px solid #f00;
-    margin-top:30px; font-size:1.8rem; animation:blink 1s infinite;
+  position: relative;
+  z-index: 2;
+  margin-top: 40px;
 }
 
-@keyframes glitch {
-    0%,100% { text-shadow:5px 0 #f00,-5px 0 #0ff; }
-    20% { text-shadow:-5px 0 #f00,5px 0 #0ff; }
-    40% { text-shadow:5px 5px #ff0,-5px -5px #0ff; }
+.avatar {
+  width: 260px;
+  height: auto;
+  border: 3px solid #00ff9d;
+  border-radius: 12px;
+  box-shadow: 0 0 25px #00ff9d;
 }
-@keyframes pulse { 0%,100% { box-shadow:0 0 40px #0f0; } 50% { box-shadow:0 0 100px #0f0; } }
-@keyframes neon { 0% { opacity:0.4; } 50% { opacity:1; } 100% { opacity:0.4; } }
-@keyframes shake { 0%,100% { transform:translateX(0); } 10%,30%,50%,70%,90% { transform:translateX(-15px); } 20%,40%,60%,80% { transform:translateX(15px); } }
-@keyframes blink { 50% { opacity:0; } }
+
+.box {
+  margin-top: 25px;
+  padding: 20px;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  border: 1px solid #00ff9d;
+  border-radius: 10px;
+  background: rgba(0,255,159,0.07);
+}
+
+/* زر الصوت */
+button {
+  padding: 10px 20px;
+  border: 1px solid #00ff9d;
+  background: transparent;
+  color: #00ff9d;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+button:hover {
+  background: rgba(0,255,159,0.2);
+}
