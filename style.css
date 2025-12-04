@@ -1,120 +1,53 @@
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    overflow: hidden;
+* { margin:0; padding:0; box-sizing:border-box; }
+body { overflow:hidden; background:#000; font-family:'Courier New',monospace; color:#0f0; }
+#matrix { position:fixed; top:0; left:0; width:100%; height:100%; z-index:1; }
+
+.sound-control {
+    position:fixed; top:20px; right:20px; background:rgba(0,255,0,0.15);
+    color:#0f0; padding:12px 18px; border:3px solid #0f0; border-radius:10px;
+    cursor:pointer; z-index:9999; font-weight:bold; box-shadow:0 0 30px #0f0;
+}
+.sound-control:hover { background:#0f0; color:#000; }
+
+.container {
+    position:absolute; top:50%; left:50%; transform:translate(-50%,-50%);
+    text-align:center; z-index:10;
+}
+.hacker-image img {
+    width:220px; height:220px; border-radius:50%; border:7px solid #0f0;
+    box-shadow:0 0 50px #0f0, inset 0 0 40px #0f0; animation:pulse 2s infinite;
+}
+h1.glitch {
+    font-size:6.5rem; font-weight:900; letter-spacing:15px; margin:30px 0;
+    animation:glitch 3s infinite;
+}
+.name { font-size:3.8rem; margin:20px 0; text-shadow:0 0 30px #0f0; }
+.tagline { font-size:1.9rem; opacity:0.85; letter-spacing:8px; }
+
+.neon-light { 
+    position:fixed; top:0; width:100%; height:8px; background:#0f0;
+    box-shadow:0 0 40px #0f0; animation:neon 4s infinite; 
+}
+.neon-light:nth-child(2) { bottom:0; animation-delay:2s; }
+
+#scaryMessage {
+    position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.98);
+    color:#f00; display:flex; flex-direction:column; justify-content:center;
+    align-items:center; z-index:9999; opacity:0; transition:opacity 1s;
+    font-size:4rem; text-shadow:0 0 40px #f00;
+}
+#scaryMessage.show { opacity:1; }
+.terminal-text {
+    background:#000; color:#0f0; padding:25px; border:3px solid #f00;
+    margin-top:30px; font-size:1.8rem; animation:blink 1s infinite;
 }
 
-/* خلفية متحركة */
-.background {
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(120deg, #000, #001a33, #003366);
-    background-size: 400% 400%;
-    animation: gradientMove 8s ease infinite;
-    z-index: -1;
+@keyframes glitch {
+    0%,100% { text-shadow:5px 0 #f00,-5px 0 #0ff; }
+    20% { text-shadow:-5px 0 #f00,5px 0 #0ff; }
+    40% { text-shadow:5px 5px #ff0,-5px -5px #0ff; }
 }
-
-@keyframes gradientMove {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
-}
-
-/* الاسم */
-.name {
-    font-size: 45px;
-    text-align: center;
-    margin-top: 60px;
-    color: white;
-    text-shadow: 0 0 15px cyan, 0 0 30px cyan;
-    animation: glow 2s infinite alternate;
-}
-
-@keyframes glow {
-    from { text-shadow: 0 0 10px cyan; }
-    to { text-shadow: 0 0 25px cyan; }
-}
-
-/* صندوق البحث */
-.search-box {
-    margin: 30px auto;
-    width: 70%;
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-}
-
-.search-box input {
-    width: 60%;
-    padding: 12px;
-    border-radius: 8px;
-    border: none;
-    outline: none;
-    font-size: 16px;
-    transition: 0.3s;
-}
-
-.search-box input:focus {
-    box-shadow: 0 0 15px cyan;
-}
-
-.search-box button {
-    padding: 12px 20px;
-    border-radius: 8px;
-    border: none;
-    background: cyan;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-.search-box button:hover {
-    transform: scale(1.1);
-}
-
-/* الأزرار */
-.buttons {
-    text-align: center;
-    margin-top: 20px;
-}
-
-.btn {
-    margin: 10px;
-    padding: 12px 25px;
-    font-size: 16px;
-    border: none;
-    border-radius: 8px;
-    background: rgba(255,255,255,0.2);
-    color: white;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-.btn:hover {
-    background: cyan;
-    color: black;
-    transform: scale(1.1);
-}
-
-/* زر الموسيقى */
-.music-control {
-    text-align: center;
-    margin-top: 30px;
-}
-
-.music-control button {
-    padding: 12px 25px;
-    font-size: 18px;
-    border: none;
-    border-radius: 10px;
-    background: #00eaff;
-    color: black;
-    cursor: pointer;
-    transition: 0.3s;
-    font-weight: bold;
-}
-
-.music-control button:hover {
-    transform: scale(1.1);
-    background: white;
-}
+@keyframes pulse { 0%,100% { box-shadow:0 0 40px #0f0; } 50% { box-shadow:0 0 100px #0f0; } }
+@keyframes neon { 0% { opacity:0.4; } 50% { opacity:1; } 100% { opacity:0.4; } }
+@keyframes shake { 0%,100% { transform:translateX(0); } 10%,30%,50%,70%,90% { transform:translateX(-15px); } 20%,40%,60%,80% { transform:translateX(15px); } }
+@keyframes blink { 50% { opacity:0; } }
