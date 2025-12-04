@@ -1,56 +1,64 @@
 <!DOCTYPE html>
-<html lang="ar">
+<html lang="ar" dir="rtl">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>HACKED BY ABDULRAHMAN ALZOMOR</title>
-    <link rel="stylesheet" href="style.css" />
+<meta charset="UTF-8">
+<title>Abdu | Ethical Hacker</title>
+
+<style>
+body {
+  margin:0;
+  padding:0;
+  background:#000;
+  font-family: monospace;
+  color:#00ff9d;
+  text-align:center;
+}
+
+/* تأثير إضاءة نيون */
+.glow {
+  text-shadow: 0 0 10px #00ff9d, 0 0 20px #00ff9d, 0 0 40px #00ff9d;
+}
+
+.container {
+  margin-top:40px;
+}
+
+.avatar {
+  width:260px;
+  height:auto;
+  border:3px solid #00ff9d;
+  border-radius:12px;
+  box-shadow:0 0 25px #00ff9d;
+}
+
+.box {
+  margin-top:25px;
+  padding:20px;
+  width:80%;
+  margin-left:auto;
+  margin-right:auto;
+  border:1px solid #00ff9d;
+  border-radius:10px;
+  background:rgba(0,255,159,0.07);
+}
+</style>
 </head>
+
 <body>
-    <canvas id="matrix"></canvas>
 
-    <audio id="hackerSound" loop autoplay>
-        <source src="https://files.catbox.moe/8j0k1v.mp3" type="audio/mpeg">
-    </audio>
+<div class="container">
+  
+  <!-- ✦ ضع رابط صورتك هنا ✦ -->
+  <img class="avatar" src="IMAGE_LINK_HERE">
 
-    <div class="sound-control" onclick="toggleSound()">
-        <span id="soundText">SOUND OFF</span>
-    </div>
+  <h1 class="glow">Abdu</h1>
 
-    <div class="container">
-        <div class="hacker-image">
-            <img src="https://i.imgur.com/2k3x9pP.jpeg" alt="ABDULRAHMAN ALZOMOR" />
-        </div>
-        <h1 class="glitch" data-text="HACKED">HACKED</h1>
-        <h2 class="name">ABDULRAHMAN ALZOMOR</h2>
-        <p class="tagline">Root Access Granted • Fear The Unknown</p>
-        
-        <div class="neon-light"></div>
-        <div class="neon-light2"></div>
-    </div>
+  <div class="box">
+    <h2 class="glow">✦ Ethical Hacker ✦</h2>
+    <p>أهلاً بكم في صفحتي الشخصية ✦ تصميم خاص بطابع هاكري وأضواء نيون.</p>
+  </div>
 
-    <div id="scaryMessage">
-        <h1>YOUR SYSTEM HAS BEEN HACKED</h1>
-        <p class="terminal-text">All your files are encrypted • Pay 10 BTC or lose everything<br>root@abdulrahman:~# rm -rf / --no-preserve-root</p>
-    </div>
+</div>
 
-    <script src="script.js"></script>
-    <script>
-        const audio = document.getElementById('hackerSound');
-        audio.volume = 0.5;
-        setTimeout(() => {
-            document.getElementById('scaryMessage').classList.add('show');
-            document.body.style.animation = 'shake 0.5s infinite';
-        }, 4000);
-        function toggleSound() {
-            if (audio.paused) {
-                audio.play();
-                document.getElementById('soundText').textContent = 'SOUND ON';
-            } else {
-                audio.pause();
-                document.getElementById('soundText').textContent = 'SOUND OFF';
-            }
-        }
-    </script>
 </body>
-</html>
+    </html>
