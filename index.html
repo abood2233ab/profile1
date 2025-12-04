@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,7 +11,7 @@
     <!-- خلفية متحركة -->
     <div class="background"></div>
 
-    <!-- المحتوى الرئيسي -->
+    <!-- المحتوى -->
     <div class="container">
         <h1 class="name">Abdualzomor</h1>
 
@@ -21,15 +21,23 @@
             <button onclick="playClick()">بحث</button>
         </div>
 
-        <!-- أزرار جميلة -->
+        <!-- أزرار -->
         <div class="buttons">
             <button class="btn" onclick="playClick()">زر 1</button>
             <button class="btn" onclick="playClick()">زر 2</button>
             <button class="btn" onclick="playClick()">زر 3</button>
         </div>
+
+        <!-- زر تشغيل الموسيقى -->
+        <div class="music-control">
+            <button onclick="toggleMusic()">🎵 تشغيل / إيقاف الموسيقى</button>
+        </div>
     </div>
 
+    <!-- الأصوات -->
     <audio id="clickSound" src="click.mp3"></audio>
+    <audio id="bgMusic" src="music.mp3" loop></audio>
+
     <script src="script.js"></script>
 </body>
-</html>
+    </html>
