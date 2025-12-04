@@ -1,101 +1,56 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="ar">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Abdualzomor | Profile</title>
-<style>
-    body {
-        margin: 0;
-        padding: 0;
-        background: #000;
-        font-family: 'Cairo', sans-serif;
-        overflow-x: hidden;
-        color: #fff;
-    }
-
-    /* خلفية نجوم متحركة */
-    .stars {
-        width: 100%;
-        height: 100vh;
-        background: url('https://i.ibb.co/rvT4GBB/stars.png');
-        animation: moveStars 20s linear infinite;
-        position: fixed;
-        top: 0; left: 0;
-        z-index: -1;
-    }
-    @keyframes moveStars {
-        from { background-position: 0 0; }
-        to { background-position: 0 2000px; }
-    }
-
-    /* أزرار جميلة */
-    .btn {
-        background: #0af;
-        padding: 15px 25px;
-        margin: 10px;
-        border-radius: 15px;
-        font-size: 22px;
-        cursor: pointer;
-        border: none;
-        color: #000;
-        transition: 0.2s;
-    }
-    .btn:hover {
-        transform: scale(1.1);
-        background: #08c;
-    }
-
-    /* صندوق في المنتصف */
-    .box {
-        margin-top: 120px;
-        text-align: center;
-    }
-
-    /* إضاءة حول الاسم */
-    .glow {
-        font-size: 45px;
-        font-weight: bold;
-        text-shadow: 0 0 15px #0af, 0 0 30px #0af;
-        animation: pulse 2s infinite;
-    }
-    @keyframes pulse {
-        0% { text-shadow: 0 0 15px #0af; }
-        100% { text-shadow: 0 0 35px #0af; }
-    }
-
-</style>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>HACKED BY ABDULRAHMAN ALZOMOR</title>
+    <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-<div class="stars"></div>
+    <canvas id="matrix"></canvas>
 
-<div class="box">
-    <h1 class="glow">Welcome — Abdualzomor</h1>
+    <audio id="hackerSound" loop autoplay>
+        <source src="https://files.catbox.moe/8j0k1v.mp3" type="audio/mpeg">
+    </audio>
 
-    <button class="btn" onclick="playClick()">🔍 زر البحث</button>
-    <button class="btn" onclick="playMusic()">🎵 تشغيل الموسيقى</button>
-    <button class="btn" onclick="stopMusic()">⛔ إيقاف الموسيقى</button>
-</div>
+    <div class="sound-control" onclick="toggleSound()">
+        <span id="soundText">SOUND OFF</span>
+    </div>
 
-<!-- الأصوات -->
-<audio id="clickSound" src="click.mp3"></audio>
-<audio id="musicSound" src="music.mp3"></audio>
+    <div class="container">
+        <div class="hacker-image">
+            <img src="https://i.imgur.com/2k3x9pP.jpeg" alt="ABDULRAHMAN ALZOMOR" />
+        </div>
+        <h1 class="glitch" data-text="HACKED">HACKED</h1>
+        <h2 class="name">ABDULRAHMAN ALZOMOR</h2>
+        <p class="tagline">Root Access Granted • Fear The Unknown</p>
+        
+        <div class="neon-light"></div>
+        <div class="neon-light2"></div>
+    </div>
 
-<script>
-    function playClick() {
-        document.getElementById('clickSound').play();
-        alert('تم الضغط — البحث جاهز يا Abdu 🧠');
-    }
+    <div id="scaryMessage">
+        <h1>YOUR SYSTEM HAS BEEN HACKED</h1>
+        <p class="terminal-text">All your files are encrypted • Pay 10 BTC or lose everything<br>root@abdulrahman:~# rm -rf / --no-preserve-root</p>
+    </div>
 
-    function playMusic() {
-        let m = document.getElementById('musicSound');
-        m.volume = 0.5;
-        m.play();
-    }
-
-    function stopMusic() {
-        document.getElementById('musicSound').pause();
-    }
-</script>
+    <script src="script.js"></script>
+    <script>
+        const audio = document.getElementById('hackerSound');
+        audio.volume = 0.5;
+        setTimeout(() => {
+            document.getElementById('scaryMessage').classList.add('show');
+            document.body.style.animation = 'shake 0.5s infinite';
+        }, 4000);
+        function toggleSound() {
+            if (audio.paused) {
+                audio.play();
+                document.getElementById('soundText').textContent = 'SOUND ON';
+            } else {
+                audio.pause();
+                document.getElementById('soundText').textContent = 'SOUND OFF';
+            }
+        }
+    </script>
 </body>
 </html>
