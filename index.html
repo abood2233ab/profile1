@@ -1,43 +1,101 @@
 <!DOCTYPE html>
-<html lang="ar">
+<html lang="ar" dir="rtl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Abdualzomor</title>
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Abdualzomor | Profile</title>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        background: #000;
+        font-family: 'Cairo', sans-serif;
+        overflow-x: hidden;
+        color: #fff;
+    }
+
+    /* خلفية نجوم متحركة */
+    .stars {
+        width: 100%;
+        height: 100vh;
+        background: url('https://i.ibb.co/rvT4GBB/stars.png');
+        animation: moveStars 20s linear infinite;
+        position: fixed;
+        top: 0; left: 0;
+        z-index: -1;
+    }
+    @keyframes moveStars {
+        from { background-position: 0 0; }
+        to { background-position: 0 2000px; }
+    }
+
+    /* أزرار جميلة */
+    .btn {
+        background: #0af;
+        padding: 15px 25px;
+        margin: 10px;
+        border-radius: 15px;
+        font-size: 22px;
+        cursor: pointer;
+        border: none;
+        color: #000;
+        transition: 0.2s;
+    }
+    .btn:hover {
+        transform: scale(1.1);
+        background: #08c;
+    }
+
+    /* صندوق في المنتصف */
+    .box {
+        margin-top: 120px;
+        text-align: center;
+    }
+
+    /* إضاءة حول الاسم */
+    .glow {
+        font-size: 45px;
+        font-weight: bold;
+        text-shadow: 0 0 15px #0af, 0 0 30px #0af;
+        animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+        0% { text-shadow: 0 0 15px #0af; }
+        100% { text-shadow: 0 0 35px #0af; }
+    }
+
+</style>
 </head>
 <body>
+<div class="stars"></div>
 
-    <!-- خلفية متحركة -->
-    <div class="background"></div>
+<div class="box">
+    <h1 class="glow">Welcome — Abdualzomor</h1>
 
-    <!-- المحتوى -->
-    <div class="container">
-        <h1 class="name">Abdualzomor</h1>
+    <button class="btn" onclick="playClick()">🔍 زر البحث</button>
+    <button class="btn" onclick="playMusic()">🎵 تشغيل الموسيقى</button>
+    <button class="btn" onclick="stopMusic()">⛔ إيقاف الموسيقى</button>
+</div>
 
-        <!-- مربع البحث -->
-        <div class="search-box">
-            <input type="text" id="searchInput" placeholder="ابحث هنا...">
-            <button onclick="playClick()">بحث</button>
-        </div>
+<!-- الأصوات -->
+<audio id="clickSound" src="click.mp3"></audio>
+<audio id="musicSound" src="music.mp3"></audio>
 
-        <!-- أزرار -->
-        <div class="buttons">
-            <button class="btn" onclick="playClick()">زر 1</button>
-            <button class="btn" onclick="playClick()">زر 2</button>
-            <button class="btn" onclick="playClick()">زر 3</button>
-        </div>
+<script>
+    function playClick() {
+        document.getElementById('clickSound').play();
+        alert('تم الضغط — البحث جاهز يا Abdu 🧠');
+    }
 
-        <!-- زر تشغيل الموسيقى -->
-        <div class="music-control">
-            <button onclick="toggleMusic()">🎵 تشغيل / إيقاف الموسيقى</button>
-        </div>
-    </div>
+    function playMusic() {
+        let m = document.getElementById('musicSound');
+        m.volume = 0.5;
+        m.play();
+    }
 
-    <!-- الأصوات -->
-    <audio id="clickSound" src="click.mp3"></audio>
-    <audio id="bgMusic" src="music.mp3" loop></audio>
-
-    <script src="script.js"></script>
+    function stopMusic() {
+        document.getElementById('musicSound').pause();
+    }
+</script>
 </body>
-    </html>
+</html>
