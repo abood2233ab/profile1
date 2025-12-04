@@ -1,30 +1,35 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Abdu — Ethical Hacker</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abdualzomor</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<div class="container">
+    <!-- خلفية متحركة -->
+    <div class="background"></div>
 
-    <div class="card">
+    <!-- المحتوى الرئيسي -->
+    <div class="container">
+        <h1 class="name">Abdualzomor</h1>
 
-        <div class="avatar">
-            <img src="photo.png" alt="Abdu Photo">
+        <!-- مربع البحث -->
+        <div class="search-box">
+            <input type="text" id="searchInput" placeholder="ابحث هنا...">
+            <button onclick="playClick()">بحث</button>
         </div>
 
-        <h1 class="name">Abdu</h1>
-
-        <p class="bio">
-            هاكر أخلاقي — محب للبرمجة والأمن السيبراني ⚡  
-            تصميم هادئ بإضاءة خضراء، ومظهر احترافي جاهز للمشاركة مع أصدقائك.
-        </p>
-
+        <!-- أزرار جميلة -->
+        <div class="buttons">
+            <button class="btn" onclick="playClick()">زر 1</button>
+            <button class="btn" onclick="playClick()">زر 2</button>
+            <button class="btn" onclick="playClick()">زر 3</button>
+        </div>
     </div>
 
-</div>
-
+    <audio id="clickSound" src="click.mp3"></audio>
+    <script src="script.js"></script>
 </body>
-  </html>
+</html>
