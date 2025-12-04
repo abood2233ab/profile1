@@ -3,62 +3,31 @@
 <head>
 <meta charset="UTF-8">
 <title>Abdu | Ethical Hacker</title>
-
-<style>
-body {
-  margin:0;
-  padding:0;
-  background:#000;
-  font-family: monospace;
-  color:#00ff9d;
-  text-align:center;
-}
-
-/* تأثير إضاءة نيون */
-.glow {
-  text-shadow: 0 0 10px #00ff9d, 0 0 20px #00ff9d, 0 0 40px #00ff9d;
-}
-
-.container {
-  margin-top:40px;
-}
-
-.avatar {
-  width:260px;
-  height:auto;
-  border:3px solid #00ff9d;
-  border-radius:12px;
-  box-shadow:0 0 25px #00ff9d;
-}
-
-.box {
-  margin-top:25px;
-  padding:20px;
-  width:80%;
-  margin-left:auto;
-  margin-right:auto;
-  border:1px solid #00ff9d;
-  border-radius:10px;
-  background:rgba(0,255,159,0.07);
-}
-</style>
+<link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
+<!-- خلفية الماتريكس -->
+<canvas id="matrix"></canvas>
+
 <div class="container">
-  
-  <!-- ✦ ضع رابط صورتك هنا ✦ -->
-  <img class="avatar" src="https://github.com/abood2233ab/profile1/blob/cfcc535f3f2b7074d98a43577fbcac7011e69688/photo.png?raw=true">
+
+  <!-- الصورة الشخصية -->
+  <img class="avatar" src="images/myphoto.jpg" alt="صورة Abdu">
 
   <h1 class="glow">Abdu</h1>
 
   <div class="box">
     <h2 class="glow">✦ Ethical Hacker ✦</h2>
-    <p>أهلاً بكم في صفحتي الشخصية ✦ تصميم خاص بطابع هاكري وأضواء نيون.</p>
+    <p>أهلاً بكم في صفحتي الشخصية ✦ تصميم بطابع هاكري وأضواء نيون مع مؤثرات صوتية وحركة ماتريكس.</p>
+    <button onclick="playSound()">تشغيل الصوت</button>
   </div>
 
 </div>
+
+<!-- إضافة جافاسكريبت -->
+<script src="script.js"></script>
+<audio id="bgSound" src="audio/music.mp3"></audio>
 
 </body>
 </html>
