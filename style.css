@@ -23,7 +23,7 @@ body {
 
 /* الاسم */
 .name {
-    font-size: 40px;
+    font-size: 45px;
     text-align: center;
     margin-top: 60px;
     color: white;
@@ -72,7 +72,7 @@ body {
     transform: scale(1.1);
 }
 
-/* أزرار إضافية */
+/* الأزرار */
 .buttons {
     text-align: center;
     margin-top: 20px;
@@ -94,4 +94,27 @@ body {
     background: cyan;
     color: black;
     transform: scale(1.1);
-    }
+}
+
+/* زر الموسيقى */
+.music-control {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.music-control button {
+    padding: 12px 25px;
+    font-size: 18px;
+    border: none;
+    border-radius: 10px;
+    background: #00eaff;
+    color: black;
+    cursor: pointer;
+    transition: 0.3s;
+    font-weight: bold;
+}
+
+.music-control button:hover {
+    transform: scale(1.1);
+    background: white;
+}
